@@ -1,0 +1,7 @@
+max_dilla:
+    resource: "@MaxDillaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

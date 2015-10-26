@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{parent()}}
+    <h3>Okres:</h3>
+    <div class="col-md-4">
+    <form method="post">
+        <label for="data1">Od</label>
+        <input id="data1" type="date" name="data1" value="">
+        <label for="data2">Do</label>
+        <input id="data2" type="date" name="data2" value="{{"now"|date('Y-m-d')}}">
+        <input type="hidden" name="filtr" value="1">
+        <input type="submit" value="Filtruj">
+    </form>
+    </div>
+        <h2>Zysk/Wartość = <b>{{szmal | round(2, 'floor')}}zł / {{wart | round(2, 'floor')}}zł  </b> </h2>
+
+         
+
+    <div class="table-responsive">
+          <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Nazwa Klienta</th>
+            <th>Wartość</th>
+            <th>Zysk </th>
+            <th>Data</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for zamowienie in zamowienia %}
+            <tr>
+
+                <td>{{zamowienie.id }}</td>
+                <td>{{ zamowienie.nazwaKliena }}</td>
+                <td>{{ zamowienie.wartosc }} zł</td>
+                <td>{{ zamowienie.zysk | round(2, 'floor') }} zł</td>
+                <td>{{ zamowienie.data | date('Y-m-d H:m') }}</td>
+                <td> <a href="{{ path('zamowienie', {'id' : zamowienie.id}) }}" class="btn btn-primary" >Pokaż szczegóły</a>
+                <td><a href="{{path('zamowienie_delete', {'id': zamowienie.id})}}" class="btn btn-danger">Usuń</a>
+                </td>
+
+            {% endfor %}
+        </tr>
+    </table>
+        
+    </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{parent()}}
+
+<div class="col-md-4 col-md-offset-4">
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+</div>
+
+
+<div class="col-md-12">
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Nazwa</th>
+        <th>Cena Zakupu Netto</th>
+        <th>Cena Sprzedazy Brutto</th>
+        <th>Zysk</th>
+        <th></th>
+                <th></th>
+
+    </tr>
+{% for produkt in produkty %}
+    <tr>
+        
+        <td>{{ produkt.id }}</td>
+        <td>{{  produkt.nazwa}}</td>
+        <td>{{  produkt.cenaNetto }} zł</td>
+        <td>{{ produkt.cenaSprzedazy }} zł</td>
+        <td>{{produkt.zysk | round(2, 'floor') }} zł</td>
+        <td><a href="{{path('produkt_edit', {'id': produkt.id})}}" class="btn btn-success">Edytuj</a>
+        <td><a href="{{path('produkt_delete', {'id': produkt.id})}}" class="btn btn-danger">Usuń</a>
+            
+            
+
+{% endfor %}
+    </tr>
+</table>
+</div>
+    {% endblock %}

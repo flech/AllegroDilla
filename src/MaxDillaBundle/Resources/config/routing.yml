@@ -1,0 +1,43 @@
+max_dilla_homepage:
+    path:     /
+    defaults: { _controller: MaxDillaBundle:Default:index }
+    
+login_route:
+    path: /login
+    defaults: { _controller: MaxDillaBundle:Security:login }
+    
+login_check:
+    path: /login_check
+    
+logout:
+    path: /logout
+
+    
+zamowienie_dodaj:
+    path:     /zamowienie/dodaj/
+    defaults: { _controller: MaxDillaBundle:Zamowienie:index }
+
+
+zamowienie:
+    path:     /zamowienie/{id}
+    defaults: { _controller: MaxDillaBundle:Zamowienie:zamowienieDetail }
+    
+produkt:
+    path:     /produkt/
+    defaults: { _controller: MaxDillaBundle:Produkt:index }
+    
+produkt_delete:
+    path:   /produkt/delete/{id}    
+    defaults: { _controller: MaxDillaBundle:Produkt:deleteProdukt }
+    
+produkt_usun:
+    path:   /zamowienie/usun/{id}
+    defaults: { _controller: MaxDillaBundle:Zamowienie:usunProdukt }
+
+produkt_edit:
+    path:   /produkt_edit/{id}
+    defaults: { _controller: MaxDillaBundle:Produkt:editProdukt }
+    
+zamowienie_delete:
+    path:   /zamowienie/delete/{id}    
+    defaults: { _controller: MaxDillaBundle:Zamowienie:deleteZamowienie }

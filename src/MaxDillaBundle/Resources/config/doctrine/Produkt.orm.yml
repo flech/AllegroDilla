@@ -1,0 +1,27 @@
+MaxDillaBundle\Entity\Produkt:
+    type: entity
+    table: null
+    repositoryClass: MaxDillaBundle\Entity\ProduktRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nazwa:
+            type: string
+            length: 255
+        cenaNetto:
+            type: float
+        idZam:
+            type: string
+            length: 255
+        ilosc:
+            type: float
+        cenaSprzedazy:
+            type: float
+        zysk:
+            type: float
+    lifecycleCallbacks: {  }
+

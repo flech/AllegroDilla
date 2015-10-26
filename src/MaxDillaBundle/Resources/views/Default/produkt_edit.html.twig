@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{#<table>
+    <tr>
+        <th>Id</th>
+        <th>Nazwa</th>
+        <th>Cena Zakupu Netto</th>
+        <th>Cena Sprzedazy Brutto</th>
+    </tr>
+
+    <tr>
+        
+        <td>{{ produkt.id }}</td>
+        <td>{{  produkt.nazwa}}</td>
+        <td>{{  produkt.cenaNetto }}</td>
+        <td>{{ produkt.cenaSprzedazy }}</td>
+
+           
+    </tr>
+</table>#}
+    {% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <style>
+                body{
+                    background-image: url("/web/bg.jpg");
+                    
+                }
+            </style>
+            <script type="text/javascript" src="/web/js/jquery-2.1.4.min.js"></script>
+
+            <link rel="stylesheet" type="text/css" href="/web/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" type="text/css" href="/web/css/bootstrap.min.css">
+
+            <script type="text/javascript" src="/web/js/bootstrap.min.js"></script>
+{#            <script type="text/javascript" src="/web/js/npm.js"></script>#}
+
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{path("max_dilla_homepage")}}">AllegroDilla</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="col-md-4"><a href="{{ path('zamowienie_dodaj') }}" >Dodaj zamówienie</a></li>
+        <li class="col-md-4"><a href="{{ path('produkt') }}" >Produkty</a></li>
+        <li class="col-md-4"><a href="{{ path('logout') }}" >Wyloguj</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        
+        
+        
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

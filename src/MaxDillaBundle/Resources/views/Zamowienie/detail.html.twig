@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{parent()}}
+<table class="table table-hover">
+    <h1>Szczegóły </h1>
+    <tr>
+        <th>Id</th>
+        <th>Nazwa Klienta</th>
+        <th>Wartość</th>
+        <th>Zysk</th>
+        <th>Data</th>
+    </tr>
+
+    <tr>
+        <td>{{order.id }}</td>
+        <td>{{ order.nazwaKliena }}</td>
+        <td>{{ order.wartosc }} zł</td>
+        <td>{{ order.zysk | round(2, 'floor') }} zł</td>
+        <td>{{ order.data | date('Y-m-d H:m') }}</td>
+    </tr>
+</table>
+    
+    <h1>Produkty w koszyku</h1>
+    <table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Nazwa</th>
+        <th>Ilosc</th>
+        <th>Cena Zakupu Netto</th>
+        <th>Cena Sprzedazy Brutto</th>
+        <th>Zysk</th>
+    </tr>
+    {% for produkt in produkty %}
+    <tr>
+        
+        <td>{{ produkt.id }}</td>
+        <td>{{  produkt.nazwa}}</td>
+        <td>{{ produkt.ilosc}}</td>
+        <td>{{  produkt.cenaNetto }} zł</td>
+        <td>{{ produkt.cenaSprzedazy }} zł</td>
+        <td>{{produkt.zysk | round(2, 'floor') }} zł</td>
+            
+{% endfor %}
+    
+    
+</table>
+{% endblock %}

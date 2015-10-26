@@ -1,0 +1,1 @@
+SELECT * FROM pytania WHERE kategoria="systemy operacyjne i sieci" || kategoria="programowanie" && rok=2012

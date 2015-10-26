@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Nazwa</th>
+        <th>Cena netto</th>
+    </tr>
+    {% dump(produkty) %}
+    {% for produkt in produkty %}
+    <tr>
+        
+        <td>{{ produkt.id }}</td>
+        <td>{{  produkt.nazwa}}</td>
+        <td>{{  produkt.cenaNetto }} zł</td>
+
+{% endfor %}
+    </tr>
+</table>
+    
+
+{% endblock %}

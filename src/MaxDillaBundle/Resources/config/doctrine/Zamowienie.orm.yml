@@ -1,0 +1,22 @@
+MaxDillaBundle\Entity\Zamowienie:
+    type: entity
+    table: null
+    repositoryClass: MaxDillaBundle\Entity\ZamowienieRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nazwaKliena:
+            type: string
+            length: '255'
+        wartosc:
+            type: float
+        zysk:
+            type: float
+        data:
+            type: date
+    lifecycleCallbacks: {  }
+    
